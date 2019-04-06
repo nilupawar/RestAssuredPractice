@@ -1,18 +1,25 @@
 package com.nilesh.practice;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.sql.SQLOutput;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Iterator;
 
-public class CreateJSONObject {
+public class Example_CreateJSONObject {
+
+
+
     public static void main(String[] args) throws IOException, ParseException {
+
+
 
         // ----------------------------------------------------------------------
         // This example is to create JSON object which has array as well inside
@@ -38,6 +45,11 @@ public class CreateJSONObject {
         JSONObject jsonReader =  (JSONObject)jsonParser.parse(new FileReader("./fileResources/data.json"));
         JSONArray s = (JSONArray) jsonReader.get("Children");
 
+        Iterator<HashMap> iterator = s.iterator();
 
+        while(iterator.hasNext()){
+            System.out.println("Every element value " + iterator.next());
+        }
+        // ----------------------------------------------------------------------
     }
 }
