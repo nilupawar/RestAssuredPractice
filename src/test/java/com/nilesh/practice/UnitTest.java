@@ -1,4 +1,4 @@
-package com.nilesh.pratice;
+package com.nilesh.practice;
 
 import org.junit.Test;
 
